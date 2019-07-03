@@ -13,3 +13,15 @@ steps:
     location: 'South Central US'
 
     csmFile: 'Lab1/ARM-Template_Incremental_Sample_Lab1.json'
+
+- task: AzureResourceGroupDeployment@2
+
+  inputs:
+
+    azureSubscription: 'Microsoft Azure Internal Consumption(38799598-962d-47e5-beb0-e391ff1577a1)'
+
+    resourceGroupName: ARM
+
+    location: 'South Central US'
+
+    csmFile: 'Lab2/ARM-Template_Incremental_Sample_Lab2.json'
