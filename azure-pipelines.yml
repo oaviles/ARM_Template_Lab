@@ -1,28 +1,15 @@
-# Starter pipeline
-- task: AzureResourceGroupDeployment@2
-  inputs:
-    azureSubscription: 'Microsoft Azure Internal Consumption(38799598-962d-47e5-beb0-e391ff1577a1)'
-    action: 'Create Or Update Resource Group'
-    resourceGroupName: 'ARM'
-    location: 'South Central US'
-    templateLocation: 'Linked artifact'
-    csmFile: 'ARM-Template_Incremental_Sample_Lab1.json'
-    deploymentMode: 'Incremental'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
-pool:
-  vmImage: 'ubuntu-latest'
-
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzureResourceGroupDeployment@2
+
+  displayName: 'Azure Deployment: IaC Lab1 ARM_Templates'
+
+  inputs:
+
+    azureSubscription: 'Microsoft Azure Internal Consumption(38799598-962d-47e5-beb0-e391ff1577a1)'
+
+    resourceGroupName: ARM
+
+    location: 'South Central US'
+
+    csmFile: 'Lab1/ARM-Template_Incremental_Sample_Lab1.json'
